@@ -20,7 +20,8 @@ public class Questão4 {
         }
         
         // Saída
-            System.out.printf("Soma de todos os números = " + soma);
+        System.out.printf("Soma de todos os números = " + soma);
+        scanner.close();
         
     }
 

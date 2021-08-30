@@ -27,6 +27,8 @@ public class Questão3 {
         for (i = 0; i < n; i++) {
             System.out.printf("Valor de C[" +i+ "] = " + C[i] + "\n");
         }
+        scanner.close();
+
     }
 
 }
