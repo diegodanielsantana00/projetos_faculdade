@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Questão1 {
+public class Questão1_31082021 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -31,7 +31,9 @@ public class Questão1 {
         System.out.printf("---------------- Gastos\n");
         // Desenvolvimento do vetGastos
         dadosPreenchimento(vetGastos, n, mesAno, scanner, "Gastos");
+        // Calcular lucro
         calcularLucro(vetGanhos,vetGastos, vetLucro, n, mesAno );
+        // Prints dos resultados
         System.out.printf("------------------------\n");
         exibirVetores(vetGanhos, "Ganhos", mesAno, n);
         System.out.printf("------------------------\n");
