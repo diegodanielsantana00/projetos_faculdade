@@ -5,7 +5,7 @@ public class Questão1_03092021 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = 3;
+        int n = 50;
         String name[] = new String[n];
         double firstMedia[] = new double[n];
         double secondMedia[] = new double[n];
