@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class QuestãoUnica {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner Scanner = new Scanner(System.in);
         String CPF;
         String validation;
         boolean result = false;
         boolean validacaoCPF = false;
         System.out.println("Digite um CPF: ");
-        CPF = in.next();
+        CPF = Scanner.next();
 
         while (result == false) {
             validacaoCPF = validarCPF(CPF);
@@ -18,7 +18,7 @@ public class QuestãoUnica {
                 System.out.println("Seu CPF não é valido ");
             }
             System.out.println("Deseja colocar outro CPF ?");
-            validation = in.next();
+            validation = Scanner.next();
             if (validation.toLowerCase().equals("s")) {
                 result = false;
             }else {
