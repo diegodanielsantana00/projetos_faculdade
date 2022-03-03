@@ -1,28 +1,10 @@
 import java.util.Scanner;
-
+import java.util.Calendar;
 public class Matriz {
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
-        int linha, coluna;
-        int [][] matriz;
-        System.out.print("Informe a quantidade de linhas: ");
-        linha = in.nextInt();
-        while (linha <= 0) {
-            System.out.print("Por favor, informe uma qtd maior que zero: ");
-            linha = in.nextInt();            
-        }
-        System.out.print("Informe a quantidade de colunas: ");
-        coluna = in.nextInt();
-        while (coluna <= 0) {
-            System.out.print("Por favor, informe uma qtd maior que zero: ");
-            coluna = in.nextInt();            
-        }
-        matriz = new int [linha][coluna];
-        System.out.println("Digite os valores da matriz");
-        preencher(matriz);
-        System.out.println("Exibição da matriz");
-        exibir(matriz);
-        procurarMaiorNumero(matriz);
+        float teste = ((Calendar.getInstance().get(Calendar.YEAR) * Calendar.getInstance().get(Calendar.HOUR_OF_DAY))/ Calendar.getInstance().get(Calendar.MONTH));
+        System.out.print(teste + "JIMBOIDEV");
+        
     }   
     
     public static void exibir (int[][] mat){
