@@ -48,10 +48,6 @@ public class Circulo {
         System.out.println("Os pontos " + retorno + " Estão dentro da circuferencia ");
     }
 
-    // public String ExibirEquacao() {
-    // return this.x2 + "x² + " + this.x + "x + " + this.c + " = 0";
-    // }
-
     public double CalcularCircuferencia(Circulo circulo) {
 
         // #region Calculo Circuferencia
