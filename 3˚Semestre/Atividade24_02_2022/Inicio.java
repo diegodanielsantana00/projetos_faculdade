@@ -1,68 +1,34 @@
-public class Livro implements Comparable<Livro> {
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
 
-    private String ISBN;
-    private String titulo;
-    private double preco;
-    private int estoque;
+public class Inicio {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String controllerSaida = "n";
+        int numeroOpcao;
+        Equacao equacao = new Equacao();
+        while (controllerSaida.equals("n")) {
+                System.out.println("1 – Cadastro da equacao");
+                System.out.println("2 – Exibir equação");
+                System.out.println("3 – Calcular BHASKARA");
+                numeroOpcao = in.nextInt();
 
-    //Construtores
-    public Livro(String ISBN) {
-        this.ISBN = ISBN;
-    }
-    public Livro(String ISBN, String titulo, double preco, int estoque) {
-        this.ISBN = ISBN;
-        this.titulo = titulo;
-        this.preco = preco;
-        this.estoque = estoque;
-    }
-
-    // Métodos GET
-    public String getISBN() {
-        return this.ISBN;
-    }
-    public String getTitulo() {
-        return this.titulo;
-    }
-    public double getPreco() {
-        return this.preco;
-    }
-    public int getEstoque() {
-        return this.estoque;
-    }
+                switch (numeroOpcao) {
+                    case 1:
+                        equacao.CadastrarEquacao();
+                        break;
+                    case 2:
+                        System.out.println(equacao.ExibirEquacao());
+                        break;
+                    case 3:
+                        equacao.CalcularEquacao(equacao);
+                        break;
    
 
-    // Métodos SET
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+                    default:
+                        break;
+                }
+        }
     }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
-    }
-
-
-    //ToString
-    // public String toString(Livro pa) {
-    //     return " X = " + pa.x + "\n Y = " + pa.y + "\n Z = " + pa.z + "\n";
-    // }
-
-    // public String toStringThisClasse() {
-    //     return " X = " + this.x + "\n Y = " + this.y + "\n Z = " + this.z + "\n";
-    // }
-
-    // CompareTo
-
-    public int compareTo (Livro outroLivro) {
-        int result;
-        result = this.ISBN.compareTo(outroLivro.ISBN);
-        return result;
-    }
-
-
-
 }
