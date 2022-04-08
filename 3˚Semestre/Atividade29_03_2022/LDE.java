@@ -35,4 +35,18 @@ public class LDE {
             }
         }
     }
+
+
+    public void inserirFinal() {
+        Node aux;
+        if (this.isEmpty()){
+            System.out.println("Lista vazia");
+        }else{
+            aux = this.primeiro;
+            while (aux != null) {
+                System.out.println(aux.getInfo());
+                auc = aux.getProx();
+            }
+        }
+    }
 }
