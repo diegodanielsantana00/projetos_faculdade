@@ -4,8 +4,8 @@ public class ContaCorrente extends ContaGeral{
   double saldo;
 
 
-  public ContaCorrente() {
-    super();
+  public ContaCorrente(String cpf, String nome) {
+    super(cpf, nome);
   }
 
   public double getTaxaDeOperacao() {

@@ -2,26 +2,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
 
-public class ContaGeral {
-
-    ContaCorrente contaCorrente = new ContaCorrente();
-    ContaPoupanca contaPoupanca = new ContaPoupanca();
-    
-    ArrayList<Movimentacao> extrato = new ArrayList<Movimentacao>();
-
+public abstract class ContaGeral{
     Date dataDeAbertura;
     int numeroDaConta;
     double saldo;
     String nome;
+    String cpf;
+    
+    ArrayList<Movimentacao> extrato = new ArrayList<Movimentacao>();
+    ContaCorrente contaCorrente = new ContaCorrente(nome,cpf);
+    ContaPoupanca contaPoupanca = new ContaPoupanca(nome,cpf);
 
-    public ContaGeral() {
+    ContaGeral(String nome, String cpf) {
         this.saldo = 0;
+        this.nome = nome;
+        this.cpf = cpf;
         this.numeroDaConta = new Random().nextInt(9999999);
         this.dataDeAbertura = new Date();
-    }
-
-    public void inserirDadosConta(String nome) {
-        this.nome = nome;
     }
 
     public String getNome() {
@@ -42,7 +39,7 @@ public class ContaGeral {
     public void Depositar(double valor) {
         this.saldo = this.saldo + valor;
         Date dataController = new Date();
-        Movimentacao aux = new Movimentacao();
+        Movimentacao aux = new Movimentacao(this.nome, this.cpf);
         aux.setarMovimentacao(valor, "+", "Deposito", dataController);
         extrato.add(aux);
     }
@@ -55,7 +52,7 @@ public class ContaGeral {
         } else {
             this.saldo = this.saldo - valor;
             Date dataController = new Date();
-            Movimentacao aux = new Movimentacao();
+            Movimentacao aux = new Movimentacao(this.nome, this.cpf);
             aux.setarMovimentacao(valor, "-", "Saque", dataController);
             extrato.add(aux);
             System.out.println("Um valor de R$" + valor + " foi sacado, saldo restante: " + this.saldo);
@@ -79,7 +76,7 @@ public class ContaGeral {
     public void Receber(double valor, String descricao) {
         this.saldo = this.saldo + valor;
         Date dataController = new Date();
-        Movimentacao aux = new Movimentacao();
+        Movimentacao aux = new Movimentacao(this.nome, this.cpf);
         aux.setarMovimentacao(valor, "+", "Recebimento - " + descricao , dataController);
         extrato.add(aux);
     }

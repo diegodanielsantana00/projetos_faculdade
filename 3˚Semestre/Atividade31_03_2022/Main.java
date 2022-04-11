@@ -30,9 +30,12 @@ public class Main {
                 numeroConta = contas.size()+1;
                 System.out.println("Digite seu nome: ");
                 String nomeTemporary = in.next();
-                ContaGeral contaGeral = new ContaGeral();
-                contaGeral.inserirDadosConta(nomeTemporary);
+                System.out.println("Digite seu CPF: ");
+                String cpf = in.next();
+                ContaGeral contaGeral = new ContaCorrente(nomeTemporary, cpf);
+                ContaGeral contaPoupanca = new ContaPoupanca(nomeTemporary, cpf);
                 contas.add(contaGeral);
+                contas.add(contaPoupanca);
                 controllerCriarConta = "3";
             }
 
@@ -52,7 +55,7 @@ public class Main {
                     case 1:
                         System.out.println("Insira seu nome: ");
                         String nomeTemporary = in.next();
-                        contas.get(numeroConta).inserirDadosConta(nomeTemporary);
+                        // contas.get(numeroConta).inserirDadosConta(nomeTemporary);
                         break;
                     case 2:
                         contas.get(numeroConta).MostrarDados();

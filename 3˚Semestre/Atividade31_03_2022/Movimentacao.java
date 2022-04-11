@@ -7,8 +7,8 @@ public class Movimentacao extends ContaGeral{
     private String tipo;
     private Date dataMovimentado;
 
-    public Movimentacao() {
-        super();
+    public Movimentacao(String nome, String cpf) {
+        super(nome,cpf);
     }
 
     public void setarMovimentacao(double valorMovimentado,  String ordem, String tipo, Date dataMovimentado){
