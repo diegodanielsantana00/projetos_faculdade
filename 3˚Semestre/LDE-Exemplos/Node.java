@@ -1,8 +1,8 @@
 public class Node {
     private Node ant;
-    private Cliente info;
+    private Tarefas info;
     private Node prox;
-    public Node(Cliente c) {
+    public Node(Tarefas c) {
         this.info = c;
     }
     public void setAnt(Node novoAnt) {
@@ -11,7 +11,7 @@ public class Node {
     public void setProx(Node novoProx) {
         this.prox = novoProx;
     }
-    public void setInfo(Cliente valor) {
+    public void setInfo(Tarefas valor) {
         this.info = valor;
     }
     public Node getAnt () {
@@ -20,7 +20,7 @@ public class Node {
     public Node getProx () {
         return this.prox;
     }
-    public Cliente getInfo () {
+    public Tarefas getInfo () {
         return this.info;
     }
 }
